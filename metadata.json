@@ -1,0 +1,6 @@
+{
+  "name": "OmniDesk - Customer Support Platform",
+  "description": "Enterprise customer support and helpdesk platform with ticketing, SLA tracking, live chat, knowledge base, AI copilot, canned macros, analytics, and role-based access control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

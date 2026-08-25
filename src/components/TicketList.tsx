@@ -63,37 +63,37 @@ export const TicketList: React.FC<TicketListProps> = ({
     switch (status) {
       case 'new':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-800/40">
             NEW
           </span>
         );
       case 'open':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-800/40">
             OPEN
           </span>
         );
       case 'pending':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-purple-100 text-purple-900 dark:bg-purple-950/60 dark:text-purple-300 border border-purple-200 dark:border-purple-800/40">
             PENDING
           </span>
         );
       case 'on_hold':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-neutral-200 text-neutral-800 dark:bg-neutral-700 dark:text-neutral-300">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
             ON HOLD
           </span>
         );
       case 'solved':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/40">
             SOLVED
           </span>
         );
       case 'closed':
         return (
-          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
             CLOSED
           </span>
         );
@@ -106,25 +106,25 @@ export const TicketList: React.FC<TicketListProps> = ({
     switch (priority) {
       case 'urgent':
         return (
-          <span className="flex items-center gap-1 text-[11px] font-bold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/40 px-2 py-0.5 rounded border border-red-200 dark:border-red-800/60">
+          <span className="flex items-center gap-1 text-[11px] font-black text-rose-700 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/50 px-2.5 py-0.5 rounded-full border border-rose-200 dark:border-rose-800/60 shadow-xs">
             <AlertCircle className="w-3 h-3" /> URGENT
           </span>
         );
       case 'high':
         return (
-          <span className="text-[11px] font-semibold text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/40 px-2 py-0.5 rounded">
+          <span className="text-[11px] font-bold text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-950/40 px-2.5 py-0.5 rounded-full border border-orange-200 dark:border-orange-800/40">
             HIGH
           </span>
         );
       case 'medium':
         return (
-          <span className="text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5 rounded">
+          <span className="text-[11px] font-semibold text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-full">
             MEDIUM
           </span>
         );
       case 'low':
         return (
-          <span className="text-[11px] font-semibold text-neutral-500 dark:text-neutral-500 bg-neutral-50 dark:bg-neutral-850 px-2 py-0.5 rounded">
+          <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 bg-slate-100/70 dark:bg-slate-800/50 px-2.5 py-0.5 rounded-full">
             LOW
           </span>
         );
@@ -134,7 +134,7 @@ export const TicketList: React.FC<TicketListProps> = ({
   const renderSLATimer = (ticket: Ticket) => {
     if (ticket.status === 'solved' || ticket.status === 'closed') {
       return (
-        <span className="text-[11px] font-medium text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+        <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-0.5 rounded-full">
           <CheckCircle2 className="w-3.5 h-3.5" /> Met
         </span>
       );
@@ -143,7 +143,7 @@ export const TicketList: React.FC<TicketListProps> = ({
     const isBreached = ticket.sla.isFirstResponseBreached || ticket.sla.isResolutionBreached;
     if (isBreached) {
       return (
-        <span className="text-[11px] font-bold text-red-600 dark:text-red-400 flex items-center gap-1 bg-red-50 dark:bg-red-950/40 px-2 py-0.5 rounded">
+        <span className="text-[11px] font-black text-rose-700 dark:text-rose-400 flex items-center gap-1 bg-rose-100 dark:bg-rose-950/60 px-2.5 py-0.5 rounded-full border border-rose-300 dark:border-rose-800">
           <AlertTriangle className="w-3 h-3" /> SLA Breached
         </span>
       );
@@ -158,9 +158,16 @@ export const TicketList: React.FC<TicketListProps> = ({
     const hours = Math.floor(remaining / 60);
     const mins = remaining % 60;
     const timeStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+    const isUrgent = remaining < 60;
 
     return (
-      <span className="text-[11px] font-medium text-neutral-600 dark:text-neutral-400 flex items-center gap-1">
+      <span
+        className={`text-[11px] font-bold flex items-center gap-1 px-2.5 py-0.5 rounded-full ${
+          isUrgent
+            ? 'bg-amber-100 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-300 dark:border-amber-800'
+            : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+        }`}
+      >
         <Clock className="w-3 h-3 text-amber-500" />
         <span>{timeStr} ({label})</span>
       </span>
@@ -168,9 +175,9 @@ export const TicketList: React.FC<TicketListProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-neutral-50/50 dark:bg-neutral-950/50 overflow-hidden">
+    <div className="flex-1 flex flex-col h-full bg-[#F8FAFC] dark:bg-slate-950 overflow-hidden">
       {/* Top View Selector & Filter Toolbar */}
-      <div className="bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 p-4 shrink-0 transition-colors">
+      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-4 shrink-0 transition-colors">
         {/* Custom Views Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
           {views.map(v => (
@@ -178,10 +185,10 @@ export const TicketList: React.FC<TicketListProps> = ({
               key={v.id}
               id={`view-tab-${v.id}`}
               onClick={() => setActiveView(v.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                 activeView === v.id
-                  ? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 shadow-sm'
-                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700'
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/20'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
               {v.label}
@@ -190,9 +197,9 @@ export const TicketList: React.FC<TicketListProps> = ({
         </div>
 
         {/* Filter Dropdowns & Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800">
+        <div className="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-slate-100 dark:border-slate-800">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-medium text-neutral-400 flex items-center gap-1">
+            <span className="text-xs font-bold text-slate-400 flex items-center gap-1">
               <Filter className="w-3.5 h-3.5" /> Filters:
             </span>
 
@@ -201,7 +208,7 @@ export const TicketList: React.FC<TicketListProps> = ({
               id="filter-status-select"
               value={statusFilter}
               onChange={e => setStatusFilter(e.target.value)}
-              className="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-2.5 py-1.5 text-neutral-800 dark:text-neutral-200 focus:outline-none focus:border-indigo-500"
+              className="text-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
             >
               <option value="all">All Statuses</option>
               <option value="new">New</option>
@@ -217,7 +224,7 @@ export const TicketList: React.FC<TicketListProps> = ({
               id="filter-priority-select"
               value={priorityFilter}
               onChange={e => setPriorityFilter(e.target.value)}
-              className="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-2.5 py-1.5 text-neutral-800 dark:text-neutral-200 focus:outline-none focus:border-indigo-500"
+              className="text-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
             >
               <option value="all">All Priorities</option>
               <option value="urgent">Urgent</option>
@@ -231,7 +238,7 @@ export const TicketList: React.FC<TicketListProps> = ({
               id="filter-category-select"
               value={categoryFilter}
               onChange={e => setCategoryFilter(e.target.value)}
-              className="text-xs bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-2.5 py-1.5 text-neutral-800 dark:text-neutral-200 focus:outline-none focus:border-indigo-500"
+              className="text-xs bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1.5 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
             >
               <option value="all">All Categories</option>
               <option value="billing">Billing & Invoices</option>
@@ -242,26 +249,26 @@ export const TicketList: React.FC<TicketListProps> = ({
             </select>
           </div>
 
-          <div className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">
-            Showing <span className="font-bold text-neutral-900 dark:text-neutral-100">{tickets.length}</span> tickets
+          <div className="text-xs text-slate-500 dark:text-slate-400 font-bold">
+            Showing <span className="font-extrabold text-indigo-600 dark:text-indigo-400">{tickets.length}</span> tickets
           </div>
         </div>
       </div>
 
       {/* Ticket List Table / Grid */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-2.5">
+      <div className="flex-1 overflow-y-auto p-5 space-y-3">
         {tickets.length === 0 ? (
-          <div className="bg-white dark:bg-neutral-900 rounded-xl p-12 text-center border border-neutral-200 dark:border-neutral-800 my-8">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl p-12 text-center border border-slate-200 dark:border-slate-800 my-8 shadow-xs">
             <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto mb-3" />
-            <h3 className="text-sm font-bold text-neutral-900 dark:text-neutral-100">
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
               No tickets found in this view
             </h3>
-            <p className="text-xs text-neutral-500 max-w-sm mx-auto mt-1">
+            <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1">
               You're all caught up! There are no matching customer support tickets for the selected filters.
             </p>
             <button
               onClick={onOpenNewTicket}
-              className="mt-4 px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition-colors cursor-pointer"
+              className="mt-5 px-5 py-2.5 text-xs font-bold rounded-full bg-rose-500 hover:bg-rose-600 text-white shadow-md shadow-rose-200 dark:shadow-rose-950/40 transition-all cursor-pointer"
             >
               Create New Ticket
             </button>
@@ -274,28 +281,28 @@ export const TicketList: React.FC<TicketListProps> = ({
                 key={ticket.id}
                 id={`ticket-card-${ticket.id}`}
                 onClick={() => onSelectTicket(ticket.id)}
-                className={`bg-white dark:bg-neutral-900 rounded-xl p-4 border transition-all cursor-pointer relative hover:shadow-md ${
+                className={`bg-white dark:bg-slate-900 rounded-2xl p-5 border transition-all cursor-pointer relative hover:shadow-lg ${
                   isSelected
-                    ? 'border-indigo-600 ring-1 ring-indigo-600 dark:border-indigo-500 dark:ring-indigo-500'
-                    : 'border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700'
+                    ? 'border-indigo-600 ring-2 ring-indigo-600/20 dark:border-indigo-500 shadow-md'
+                    : 'border-slate-200 dark:border-slate-800/80 hover:border-indigo-300 dark:hover:border-indigo-900/50'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4">
                   {/* Left Metadata & Title */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                      <span className="font-mono text-xs font-bold text-neutral-500 dark:text-neutral-400">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                      <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
                         #{ticket.ticketNumber}
                       </span>
                       {getStatusBadge(ticket.status)}
                       {getPriorityBadge(ticket.priority)}
-                      <span className="text-[11px] font-medium text-neutral-500 dark:text-neutral-400 px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 uppercase tracking-wider">
+                      <span className="text-[11px] font-bold text-indigo-600 dark:text-indigo-400 px-2.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-100 dark:border-indigo-900/40 uppercase tracking-wider">
                         {ticket.category.replace('_', ' ')}
                       </span>
                       {ticket.tags.map(tag => (
                         <span
                           key={tag}
-                          className="text-[10px] text-neutral-500 dark:text-neutral-400 px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 flex items-center gap-0.5"
+                          className="text-[10px] font-medium text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center gap-1"
                         >
                           <Tag className="w-2.5 h-2.5" />
                           {tag}
@@ -303,11 +310,11 @@ export const TicketList: React.FC<TicketListProps> = ({
                       ))}
                     </div>
 
-                    <h4 className="text-sm font-bold text-neutral-900 dark:text-neutral-100 truncate">
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white truncate">
                       {ticket.subject}
                     </h4>
 
-                    <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-1">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">
                       {ticket.lastMessagePreview || ticket.description}
                     </p>
                   </div>
@@ -323,22 +330,22 @@ export const TicketList: React.FC<TicketListProps> = ({
                         src={ticket.customerAvatar}
                         alt={ticket.customerName}
                         title={`Customer: ${ticket.customerName} (${ticket.customerEmail})`}
-                        className="w-6 h-6 rounded-full object-cover ring-1 ring-neutral-200 dark:ring-neutral-700"
+                        className="w-7 h-7 rounded-full object-cover ring-2 ring-slate-100 dark:ring-slate-800"
                       />
-                      <span className="text-xs text-neutral-700 dark:text-neutral-300 font-medium">
+                      <span className="text-xs text-slate-700 dark:text-slate-300 font-semibold">
                         {ticket.customerName}
                       </span>
-                      <ChevronRight className="w-4 h-4 text-neutral-400" />
+                      <ChevronRight className="w-4 h-4 text-slate-400" />
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Bar: Messages and Updated Timestamp */}
-                <div className="flex items-center justify-between mt-3 pt-2.5 border-t border-neutral-100 dark:border-neutral-800/70 text-[11px] text-neutral-400">
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100 dark:border-slate-800/70 text-[11px] text-slate-400">
                   <div className="flex items-center gap-3">
-                    <span>{ticket.messageCount} {ticket.messageCount === 1 ? 'message' : 'messages'}</span>
+                    <span className="font-medium text-slate-500 dark:text-slate-400">{ticket.messageCount} {ticket.messageCount === 1 ? 'message' : 'messages'}</span>
                     {ticket.csat && (
-                      <span className="text-amber-500 font-semibold flex items-center gap-1">
+                      <span className="text-amber-500 font-bold flex items-center gap-1 bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-800/40">
                         ★ {ticket.csat.rating}/5 CSAT
                       </span>
                     )}
